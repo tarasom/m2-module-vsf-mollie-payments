@@ -1,0 +1,7 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="GetNoticed\VsfMollie\Api\Data\MollieOrderInterface" type="GetNoticed\VsfMollie\Model\MollieOrder"/>
+    <preference for="GetNoticed\VsfMollie\Api\MollieOrderRepositoryInterface" type="GetNoticed\VsfMollie\Model\MollieOrderRepository"/>
+    <type name="Magento\Sales\Api\OrderRepositoryInterface">
+        <plugin name="gn_vsf_order_extension_attributes" type="GetNoticed\VsfMollie\Plugin\OrderExtensionAttributes"/>
+    </type>
+</config>

@@ -1,0 +1,21 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="gn_vsf_mollie_order" comment="Get.Noticed VSF - Mollie Order Table">
+        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" identity="true" nullable="false" comment="Entity ID"/>
+        <column xsi:type="int" name="order_id" padding="10" unsigned="true" nullable="false" comment="Order Entity ID"/>
+        <column xsi:type="varchar" name="mollie_transaction_id" comment="Mollie Transaction ID"/>
+        <column xsi:type="varchar" name="mollie_secret_hash" comment="Mollie Secret Hash"/>
+        <column xsi:type="datetime" name="created_at" default="CURRENT_TIMESTAMP" on_update="false" comment="Created At"/>
+        <column xsi:type="datetime" name="updated_at" default="CURRENT_TIMESTAMP" on_update="true" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <constraint xsi:type="unique" referenceId="ENTITY_ID_ORDER_ID">
+            <column name="entity_id"/>
+            <column name="order_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="GN_VSF_MOLLIE_ORDER_SALES_ORDER_ENTITY_ID"
+                    table="gn_vsf_mollie_order" column="order_id"
+                    referenceTable="sales_order" referenceColumn="entity_id"
+                    onDelete="CASCADE"/>
+    </table>
+</schema>
