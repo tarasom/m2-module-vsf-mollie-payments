@@ -1,0 +1,13 @@
+{
+    "name": "getnoticed/module-vsf-mollie",
+    "description": "A Vue Storefront API adoptation for Magento 2, that offers additional fields required for the implementation of Mollie.",
+    "type": "magento2-module",
+    "authors": [
+        {
+            "name": "Wesley Vestjens",
+            "email": "wesley@getnoticed.nl"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
