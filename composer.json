@@ -8,6 +8,14 @@
             "email": "wesley@getnoticed.nl"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "GetNoticed\\VsfMollie\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    },
     "minimum-stability": "stable",
     "require": {}
 }
