@@ -34,8 +34,10 @@ class OrderExtensionAttributes
         $extensionAttributes = $order->getExtensionAttributes();
 
         try {
-            $extensionAttributes->setGnVsfMollieOrder($this->mollieOrderRepository->getByOrder($order));
+            $mollieOrder = $this->mollieOrderRepository->getByOrder($order);
+            $extensionAttributes->setGnVsfMollieOrder($mollieOrder);
 
+            $order->setMollieTransactionId($mollieOrder->getMollieTransactionId());
             return $order;
         } catch (NoSuchEntityException $e) {
             // No Mollie data, return original order without further action
