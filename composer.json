@@ -1,6 +1,5 @@
 {
     "name": "tarasom/module-vsf-mollie",
-    "version": "master",
     "description": "A Vue Storefront API adoptation for Magento 2, that offers additional fields required for the implementation of Mollie.",
     "type": "magento2-module",
     "authors": [
